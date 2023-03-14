@@ -1,0 +1,31 @@
+The repository is for DL by Prof.Hsu
+topic: Image classification (HW 1)
+
+The repository includes two classifiers.
+ 
+The first classifier is CNN + perceptron(fully-connected layer).
+description:
+	The classifier doesn't use any existing packages to extract features, using my own designed CNN model instead.
+	In order to feed into the CNN model, I segment all images of datasets into 200x200x3.
+	Then, the features (i.e. the output of CNN model) are fed into the fully-connected layer.
+	The last layer is a list of predicted score (50-dim vectors).
+	
+	The loss is designed as the MSEloss of the encoded label(one-hot encoding) and predicted score.
+	P.S. the one-hot encoding function is in function.py
+	
+The classifier includes main.py, dataset.py, model.py, config.py, function.py.
+Notes: If you would like to implement the individual classifiers, you have to put train.txt, valid.txt, test.txt, and images(folder) into the subfolder(ex:CNN+perceptron).
+
+
+The second classifier is feature_extract(HSV) + K-nearnest neighbor algorithm(K-NN).
+description:
+	The classifier transform the original images into the HSV space at the beginning.
+	Then, the transformed data is the features we need.
+	We feed the features into the K-NN algorithm.
+
+The classifier is in .zip file.
+
+
+
+
+
